@@ -5,15 +5,16 @@ You can use this to automate your tool if you want better download speed with ID
 
 ---
 ## **EXAMPLE USAGE**:
+
 ```python
 url = 'http://www.internetdownloadmanager.com/idman401.exe'
 
 output_folder = Path.cwd()
 output_filename = 'idman.exe'
 user_agent = None
-flag = 3    # see above the flag information
+flag = 3  # see above the flag information
 idm = IDMHelper(url, str(output_folder), output_filename, flag)
-idm.send_link_to_idm()      # for simple method with limited parameters
+idm.SendLinkToIdm()  # for simple method with limited parameters
 # idm.send_link_to_idm2()   # with all parameters
 ```
 ---

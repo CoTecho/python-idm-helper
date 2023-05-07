@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 '''
 Python IDM Helper by zackmark29
 Version v1.0.2 | 2021.11.28
@@ -10,7 +11,7 @@ from module import get_module
 from comtypes.automation import VT_EMPTY
 
 
-class IDMHelper:
+class CIDMHelper:
     '''
     flags
         0: Display/Pop-up confirmation before downloading
@@ -46,7 +47,7 @@ class IDMHelper:
 
         self.idm_module = get_module()
 
-    def send_link_to_idm(self) -> None:
+    def SendLinkToIdm(self) -> None:
         """Simple method with limited parameters"""
 
         idm = client.CreateObject(
@@ -65,7 +66,7 @@ class IDMHelper:
             bstrPassword=None,
         )
 
-    def send_link_to_idm2(self) -> None:
+    def SendLinkToIdm2(self) -> None:
         """Method with all the parameters"""
 
         idm = client.CreateObject(
@@ -94,6 +95,6 @@ if __name__ == '__main__':
     output_filename = 'idman.exe'
     user_agent = None
     flag = 3    # see above the flag information
-    idm = IDMHelper(url, str(output_folder), output_filename, flag)
-    idm.send_link_to_idm()
+    idm = CIDMHelper(url, str(output_folder), output_filename, flag)
+    idm.SendLinkToIdm()
     # idm.send_link_to_idm2()
