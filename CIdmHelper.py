@@ -10,15 +10,29 @@ from comtypes import client
 from module import get_module
 from comtypes.automation import VT_EMPTY
 
+g_Mgr = None
 
-class CIDMHelper:
-    '''
+
+def GetMgr():
+    global g_Mgr
+    if not g_Mgr:
+        g_Mgr = CIdmMager()
+    return g_Mgr
+
+
+class CIdmMager(object):
+    """管理IDM任务"""
+
+
+class CIdmHelper(object):
+    """
     flags
         0: Display/Pop-up confirmation before downloading
         1: Download automatically without any confirmations dialogs
         2: Display confirmation if found duplicate and add only to queue
         3: Add only to queue without any confirmation
-    '''
+    """
+
     def __init__(self,
                  url: str,
                  output_folder: str,
@@ -94,7 +108,7 @@ if __name__ == '__main__':
     output_folder = Path.cwd()
     output_filename = 'idman.exe'
     user_agent = None
-    flag = 3    # see above the flag information
-    idm = CIDMHelper(url, str(output_folder), output_filename, flag)
+    flag = 3  # see above the flag information
+    idm = CIdmHelper(url, str(output_folder), output_filename, flag)
     idm.SendLinkToIdm()
     # idm.send_link_to_idm2()

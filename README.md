@@ -1,4 +1,7 @@
 # python-idm-helper
+
+**改自[zackmark29/python-idm-helper](https://github.com/zackmark29/python-idm-helper)**
+
 **Python IDM Helper** will let you send any link inside python directly to IDM.
 
 You can use this to automate your tool if you want better download speed with IDM.
