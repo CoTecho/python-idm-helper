@@ -7,7 +7,7 @@ Version v1.0.2 | 2021.11.28
 from typing import Optional
 from pathlib import Path
 from comtypes import client
-from module import get_module
+from .module import get_module
 from comtypes.automation import VT_EMPTY
 
 g_Mgr = None

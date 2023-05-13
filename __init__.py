@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 """IDM控制模块"""
-import CIdmHelper
+from . import CIdmHelper
 
 
 def DownloadUrlList(dUrl, sPath, sDequeName="", bStart=True):
