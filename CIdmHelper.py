@@ -23,6 +23,20 @@ def GetMgr():
 class CIdmMager(object):
     """管理IDM任务"""
 
+    def __init__(self):
+        self.m_lTaskList = []
+        self.m_bRunning = False
+
+    def AddList(self, sUrl, sTargetFolder, sFileName):
+        self.m_lTaskList.append((sUrl, sTargetFolder, sFileName, 2))
+
+    def Clear(self):
+        self.m_lTaskList.clear()
+
+    def Start(self):
+        for args in self.m_lTaskList:
+            CIdmHelper(*args).SendLinkToIdm()
+
 
 class CIdmHelper(object):
     """
