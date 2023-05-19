@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 """IDM控制模块"""
-from . import CIdmHelper
+from . import CIdmHelper as _CIdmHelper
 
 
 def DownloadUrlList(dUrl, sPath, bStart=True):
@@ -10,7 +10,7 @@ def DownloadUrlList(dUrl, sPath, bStart=True):
     @param sPath: 目标目录
     @param bStart: 是否立刻开始
     """
-    mgr = CIdmHelper.GetMgr()
+    mgr = _CIdmHelper.GetMgr()
     for sName, sUrl in dUrl.items():
         mgr.AddList(sUrl, sPath, sName)
     if bStart:
@@ -22,7 +22,7 @@ def Start():
     """
     开始队列
     """
-    CIdmHelper.GetMgr().Start()
+    _CIdmHelper.GetMgr().Start()
 
 
 def Stop():
